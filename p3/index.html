@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+      #statusDisplay {
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin: 20px 0;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .success {
+        color: green;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+    
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">My Projects</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../p1/index.html">Project 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../p2/index.html">Project 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../p3/index.html">Project 3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../p4/index.html">Project 4</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../p5/index.html">Project 5</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../p6/index.html">Project 6</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../p7/index.html">Project 7</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../p8/index.html">Project 8</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container text-center">
+        <div class="row">
+          <div class="col-sm-12">
+            <p id="statusDisplay"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">        
+            <label for="val1">Value 1:</label>
+            <input class="form-control" type="text" placeholder="Value 1" aria-label="default input example" id="val1">
+          </div>
+          <div class="col-sm">
+            <label for="val1">Value 2:</label>
+            <input class="form-control" type="text" placeholder="Value 2" aria-label="default input example" id="val2">
+          </div>
+          <div class="col-sm">
+            <label for="val1">Value 3:</label>
+            <input class="form-control" type="text" placeholder="Value 3" aria-label="default input example" id="val3">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-secondary btn-lg" onclick="performArithmetics()">Calculate</button>
+
+            </div>
+      </div>
+
+
+    <script src="./scripts/index.js"></script>
+    <script>
+      function performArithmetics() {
+        var val1 = Number(document.getElementById("val1").value);
+        var val2 = Number(document.getElementById("val2").value);
+        var val3 = Number(document.getElementById("val3").value);
+      
+        if (isNaN(val1) || isNaN(val2) || isNaN(val3)) {
+          document.getElementById("statusDisplay").innerHTML = "Error: Invalid input";
+          document.getElementById("statusDisplay").classList.add("error");
+        } else {
+          var result = val1 + val2 - val3;
+          document.getElementById("statusDisplay").innerHTML = "Result: " + result;
+          document.getElementById("statusDisplay").classList.add("success");
+        }
+      }
+      
+    </script>
+</body>
+</html>
